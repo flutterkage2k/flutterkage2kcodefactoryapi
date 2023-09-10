@@ -16,12 +16,19 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    // deleteToken();
     checkToken();
+  }
+
+  void deleteToken() async {
+    await storage.deleteAll();
   }
 
   void checkToken() async {
     final refreshToken = await storage.read(key: REFRESH_TOKEN_KEY);
     final accessToken = await storage.read(key: ACCESS_TOKEN_KEY);
+
+    //제공되는 API에서의 refreshToken & accessToken 으로 네이밍이 설정되어있기 때문에 이런식으로 만든다.
 
     if (refreshToken == null || accessToken == null) {
       Navigator.of(context).pushAndRemoveUntil(

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:fluttercodefactorywithapi230711/common/view/splash_screen.dart';
-import 'package:fluttercodefactorywithapi230711/user/view/login_screen.dart';
 
 void main() {
   runApp(_App());
 }
 
 class _App extends StatelessWidget {
-  const _App({super.key});
+  const _App();
 
   @override
   Widget build(BuildContext context) {
